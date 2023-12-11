@@ -1,0 +1,60 @@
+#Soft link and Hard link
+
+#Links:Links are nothing but a connection between a file name and the actual content of file
+       We can call it as a shortcut
+
+
+#Soft link :A soft link is similar to the file shortcut feature which is used in Windows Operating                                  
+           system.
+           One can create a softlink of a nested file and can call that file using that link (next time ).Softlink will be removed as soon as original file is deleted .
+
+Syntax to create a softlink : $ ln  -s [original filename] [link name] 
+          
+
+[vedant@localhost ~]$ mkdir -p folderx/foldery/folderz
+
+Here 3 folders are created which are nested inside one another 
+
+
+[vedant@localhost ~]$ touch folderx/foldery/folderz/file1.txt
+
+Here a file is created inside the innermost folder (folders)
+
+
+[vedant@localhost ~]$ cat > folderx/foldery/folderz/file1.txt 
+hii its file1.txt.
+how are you guys.
+Hope you are good.
+^C
+
+Here some text is added inside that file using cat command
+
+Now we are creating a softlink of that created file
+
+[vedant@localhost ~]$ ln -s folderx/foldery/folderz/file1.txt file1
+
+Here we gave soft link name as file1
+Now we can display the content of a file using that link
+
+[vedant@localhost ~]$ cat file1
+hii its file1.txt.
+how are you guys.
+Hope you are good.
+
+
+
+#Hard link:Hard link is like a copy of original file .Renaming,deleting or removing file will not affect the hard link.
+
+
+Syntax to create a hardlink : $ ln  [original filename] [link name] 
+
+[vedant@localhost ~]$ ln folderx/foldery/folderz/file1.txt file1h
+
+Here we gave hard link name as file1h
+Now we can display the content of a file using that link
+
+[vedant@localhost ~]$ cat file1h
+hii its file1.txt.
+how are you guys.
+Hope you are good.
+[vedant@localhost ~]$ 
