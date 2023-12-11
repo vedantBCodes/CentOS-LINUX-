@@ -1,0 +1,159 @@
+
+User and Group Administration commands
+
+To add or remove any user one must be logged in as root user
+To login as root user we must run su command
+
+1.su(superuser) -->To login as root user
+
+[vedant@localhost ~]$ su
+Password: 
+[root@localhost vedant]# useradd omkar
+
+2.id -->To check the user is created or not
+
+
+[root@localhost vedant]# id omkar
+uid=2323(omkar) gid=2323(omkar) groups=2323(omkar)
+
+The default home directory of all the newly created user is /home directory 
+
+[root@localhost vedant]# ls /home
+king  mia  omakar  pratik  rahul  srk  user  veda  vedant  vedantyeotikar
+
+3.usermod -->Used to modify the user 
+
+Options used to modify user :
+
+I.-u -->To set userID
+
+[root@localhost vedant]# usermod -u 1221 omkar
+[root@localhost vedant]# id omkar
+uid=1221(omkar) gid=2323(omkar) groups=2323(omkar)
+
+II.-g -->To set primary group. (The group must be existed)
+
+[root@localhost vedant]# usermod -g sgroup omkar
+
+III.-G -->To set secondary group. (The group must be existed)
+
+[root@localhost vedant]# usermod -G sgroup omkar
+
+IV.-p -->To set password
+
+[root@localhost vedant]# usermod -p omkar1234  omkar
+
+V.-c -->To set comment
+
+[root@localhost vedant]# usermod -c "Hii omkar"  omkar
+
+VI.-s -->To set shell
+
+[root@localhost vedant]# usermod -s /bin/bash  omkar
+
+VII.-m -d -->To set home directory
+
+[root@localhost vedant]# usermod -m -d /home/omkar omkar
+
+VIII.-L -->To lock the user
+
+[root@localhost vedant]# usermod -L omkar
+
+IX.-U -->To unlock the user
+
+[root@localhost vedant]# usermod -U omkar
+
+All the users along with the extra information are stored in /etc/passwd directory
+
+[root@localhost vedant]# cat /etc/passwd
+
+dnsmasq:x:980:979:Dnsmasq DHCP and DNS server:/var/lib/dnsmasq:/usr/sbin/nologin
+tcpdump:x:72:72::/:/sbin/nologin
+vedant:x:1001:1001:vedant:/home/vedant:/bin/bash
+srk:x:1003:1005:hii SRK:/home/srk:/bin/bash
+veda:x:1004:1006::/home/user:/bin/bash
+rahul:x:1005:1002::/home/rahul:/bin/bash
+king:x:1006:1007::/home/king:/bin/bash
+som:x:1007:1008::/home/som:/bin/bash
+mia:x:2321:1003:hii mia:/etc/pass:/bin/bash
+pratik:x:2322:2322::/home/pratik:/bin/bash
+omkar:x:1221:1004:Hii omkar:/home/omakar:/bin/bash
+
+All the groups along with the some extra information are stored in /etc/group directory
+
+[root@localhost vedant]# cat /etc/group
+dnsmasq:x:979:
+tcpdump:x:72:
+vedant:x:1001:
+rahul:x:1002:
+pgroup:x:1003:
+sgroup:x:1004:rahul,srk,omkar
+srk:x:1005:
+veda:x:1006:
+king:x:1007:
+som:x:1008:
+mia:x:1009:
+TMV:x:1010:som,mia
+pratik:x:2322:
+omkar:x:2323:
+
+4.su <username> -->To login as user
+
+[root@localhost vedant]# su vedant
+[vedant@localhost ~]$
+
+
+5.userdel -->Used to delete user
+
+
+[root@localhost vedant]# su
+Password:
+
+[root@localhost vedant]# ls /home
+king  mia  omakar  pratik  rahul  srk  user  veda  vedant  vedantyeotikar
+
+[root@localhost vedant]# userdel -r omkar
+
+[root@localhost vedant]# ls /home
+king mia  pratik  rahul  srk  user  veda  vedant  vedantyeotikar
+
+
+5.groupadd -->Used to create a new group
+
+
+[root@localhost vedant]# groupadd group1
+
+All the groups are stored in /etc/group directory 
+
+[root@localhost vedant]# cat /etc/group
+tcpdump:x:72:
+vedant:x:1001:
+rahul:x:1002:
+pgroup:x:1003:
+sgroup:x:1004:rahul,srk
+srk:x:1005:
+som:x:1008:
+mia:x:1009:
+TMV:x:1010:som,mia
+pratik:x:2322:
+omkar:x:2323:
+group1:x:2324:
+
+
+6.groupdel  -->Used to remove a group
+
+[root@localhost vedant]# groupdel group1
+
+[root@localhost vedant]# cat /etc/group
+tcpdump:x:72:
+vedant:x:1001:
+rahul:x:1002:
+pgroup:x:1003:
+sgroup:x:1004:rahul,srk
+srk:x:1005:
+som:x:1008:
+mia:x:1009:
+TMV:x:1010:som,mia
+pratik:x:2322:
+omkar:x:2323:
+
