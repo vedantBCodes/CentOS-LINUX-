@@ -1,0 +1,51 @@
+#Setting IP address and netmask
+
+
+1.ifconfig -->displaying IP address and netmask address
+
+
+[root@localhost ~]# ifconfig
+enp0s5: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 122.32.121.34  netmask 255.0.0.0  broadcast 122.255.255.255
+        inet6 fe80::21c:42ff:febd:1e08  prefixlen 64  scopeid 0x20<link>
+        inet6 fdb2:2c26:f4e4:0:21c:42ff:febd:1e08  prefixlen 64  scopeid 0x0<global>
+        ether 00:1c:42:bd:1e:08  txqueuelen 1000  (Ethernet)
+        RX packets 173154  bytes 216966096 (206.9 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 55340  bytes 5574602 (5.3 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 122.32.121.34  netmask 255.255.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 649  bytes 69242 (67.6 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 649  bytes 69242 (67.6 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+2.ifconfig -->Setting Both IP and netmask address 
+
+
+[root@localhost ~]# ifconfig enp0s5 111.222.12.23 netmask 255.255.0.0
+
+[root@localhost ~]# ifconfig
+enp0s5: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 122.32.121.34  netmask 255.0.0.0  broadcast 111.255.255.255
+        inet6 fe80::21c:42ff:febd:1e08  prefixlen 64  scopeid 0x20<link>
+        inet6 fdb2:2c26:f4e4:0:21c:42ff:febd:1e08  prefixlen 64  scopeid 0x0<global>
+        ether 00:1c:42:bd:1e:08  txqueuelen 1000  (Ethernet)
+        RX packets 173311  bytes 216986785 (206.9 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 55509  bytes 5593372 (5.3 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 111.222.12.23  netmask 255.255.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 659  bytes 70950 (69.2 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 659  bytes 70950 (69.2 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
