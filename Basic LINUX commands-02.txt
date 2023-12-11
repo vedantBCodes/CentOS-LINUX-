@@ -1,0 +1,169 @@
+Basic LINUX commands
+
+1.mkdir -->Used to create an empty directory(Folder)
+
+[vedant@localhost ~]$ pwd
+/home/vedant
+
+[vedant@localhost ~]$ mkdir folder1
+[vedant@localhost ~]$ ls
+Desktop  Documents  Downloads  folder1  Music  Pictures  Public  Templates
+
+[vedant@localhost ~]$ mkdir folder2 folder3 folder4
+[vedant@localhost ~]$ ls
+Desktop    Downloads  folder2  folder4  Pictures  Templates
+Documents  folder1    folder3  Music    Public
+
+
+2.rmdir -->Used to remove an empty directory
+
+[vedant@localhost ~]$ rmdir folder4
+[vedant@localhost ~]$ ls
+Desktop    Downloads  folder2  Music     Public
+Documents  folder1    folder3  Pictures  Templates
+
+
+3.cp -->Used to copy and paste a file
+
+Syntax : cp file_name(or file path) destination folder(or path of a directory)
+
+[vedant@localhost ~]$ touch veda
+[vedant@localhost ~]$ ls
+Desktop    Downloads  folder2  Music     Public     veda
+Documents  folder1    folder3  Pictures  Templates
+
+
+[vedant@localhost ~]$ cp veda Documents.  (It will copy veda file from home directory and paste it in the Documents folder)
+
+[vedant@localhost ~]$ cd Documents
+[vedant@localhost Documents]$ ls
+veda
+
+4.tac  -->Used to display the content of a file in reverse order (From bottom to top)
+
+[vedant@localhost ~]$ cd Documents
+[vedant@localhost Documents]$ ls
+file1  veda 
+
+[vedant@localhost Documents]$ cat file1
+How are your kids
+How are you
+I am good
+
+[vedant@localhost Documents]$ tac file1
+I am good
+How are you
+How are your kids
+
+
+5.comm -->Used to display common content (lines) between two files
+
+[vedant@localhost Documents]$ cd ..
+[vedant@localhost ~]$ cd Downloads
+[vedant@localhost Downloads]$ ls
+file2  file3  file4  file5  file6  file7  file8
+[vedant@localhost Downloads]$ cat file2
+Hii its file2
+how are you
+I am good
+Hope you are doing well file3
+
+[vedant@localhost Downloads]$ cat file3
+Hii its file3
+how are you
+i am good
+Hope you are doing well file2
+
+[vedant@localhost Downloads]$ comm file2 file3
+Hii its file2
+	Hii its file3
+		how are you
+	i am good
+comm: file 2 is not in sorted order
+	Hope you are doing well file2
+I am good
+comm: file 1 is not in sorted order
+Hope you are doing well file3
+comm: input is not in sorted order
+
+6.diff -->Used to display the difference between two files
+
+[vedant@localhost Downloads]$ diff file2 file3
+1c1
+< Hii its file2
+---
+> Hii its file3
+3,4c3,4
+< I am good
+< Hope you are doing well file3
+---
+> i am good
+> Hope you are doing well file2
+
+7.cmp -->Used to compair two files
+
+
+[vedant@localhost Downloads]$ cmp file2 file3
+file2 file3 differ: byte 13, line 1
+
+8.more -->Used to display whole content of a file at a time (It is used while dealing with large files).
+
+
+[vedant@localhost Downloads]$ more file2
+Hii its file2
+how are you
+I am good
+Hope you are doing well file3
+
+9.less -->Used to display one page of a file at a time (It is used while dealing with large files).
+
+
+[vedant@localhost Downloads]$ less file2. (It will display content by opening a separate console
+
+10.head --> Used to display first n lines from a file
+
+
+[vedant@localhost Downloads]$ head file2 (It will display first 10 lines from top)
+
+Hii its file2
+how are you
+I am good
+Hope you are doing well file3
+
+
+[vedant@localhost Downloads]$ head -3 file2 (It will display first 3 lines from top)
+Hii its file2
+how are you
+I am good
+
+11.tail --> Used to display n lines from bottom of a file
+
+
+[vedant@localhost Downloads]$ tail file2 (It will display last 10 lines)
+Hii its file2
+how are you
+I am good
+Hope you are doing well file3
+
+
+[vedant@localhost Downloads]$ tail -3 file2. (It will display last 3 lines from bottom)
+how are you
+I am good
+Hope you are doing well file3
+
+12.wc -->Used to display word count (no. of lines , no. of words , and no. of characters (bytes) respectively)
+
+
+[vedant@localhost Downloads]$ wc file2
+ 4 15 66 file2
+
+[vedant@localhost Downloads]$ wc -l file2. (Displaying lines)
+4 file2
+
+[vedant@localhost Downloads]$ wc -w file2.  (Displaying words)
+15 file2
+
+[vedant@localhost Downloads]$ wc -c file2.  (Displaying characters)
+66 file2
+
+
