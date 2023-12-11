@@ -1,0 +1,83 @@
+#tar gzip and gunzip commands
+
+-->These commands are used to convert large files into smaller one(zip file with .gz extension).
+-->This should done so that one can move file from one location to another easily (size of zip files are very less compared to normal files)
+-->After moving one can unzip a file and can read it.
+-->Zip files cannot be opened without unzipping it.
+
+
+1.gzip -->To convert a normal file into zip file
+
+
+[vedant@localhost ~]$ cd Documents
+[vedant@localhost Documents]$ ls
+file1  veda
+[vedant@localhost Documents]$ gzip file1
+[vedant@localhost Documents]$ ls
+file1.gz  veda
+
+
+2.gunzip --->To unzip a file
+
+
+[vedant@localhost Documents]$ gunzip file1.gz
+[vedant@localhost Documents]$ ls
+file1  veda
+
+-->Directories cannot be directly converted into zip files.
+-->First they should be converted into tar files(with .tar extension)
+
+
+3.tar -->To convert a normal file into tar file (with .tar extension)
+
+
+[vedant@localhost Documents]$ cd
+[vedant@localhost ~]$ ls
+Desktop    Downloads  file1h   folder2  folderx  Pictures  Templates
+Documents  file1      folder1  folder3  Music    Public    veda
+
+[vedant@localhost ~]$ tar cvf fold.tar folder1
+folder1
+
+[vedant@localhost ~]$ ls
+Desktop    Downloads  file1h   folder2  folderx   Music     Public     veda
+Documents  file1      folder1  folder3  fold.tar  Pictures  Templates
+
+-->converting tar file to zip file
+
+[vedant@localhost ~]$ gzip fold.tar
+
+[vedant@localhost ~]$ ls
+Desktop    Downloads  file1h   folder2  folderx      Music     Public     veda
+Documents  file1      folder1  folder3  fold.tar.gz  Pictures  Templates
+
+-->Moving zip file from home directory to Documents
+
+[vedant@localhost ~]$ mv fold.tar.gz Documents
+[vedant@localhost ~]$ cd Documents/
+[vedant@localhost Documents]$ ls
+file1  fold.tar.gz  veda
+
+-->Unzipping zip file in the Documents
+
+[vedant@localhost Documents]$ gunzip fold.tar.gz
+[vedant@localhost Documents]$ ls
+file1  fold.tar  veda
+
+-->Using tar command to convert tar file to normal folder
+
+[vedant@localhost Documents]$ tar xvf fold.tar
+folder1
+
+[vedant@localhost Documents]$ ls
+file1  fold.tar  folder1 veda
+
+NOTE: Here even after unzipping folder .tar file exists (It should be removed separately)
+
+[vedant@localhost Documents]$ rm -r fold.tar
+[vedant@localhost Documents]$ ls
+file1 folder1 veda
+
+
+
+
