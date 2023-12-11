@@ -8,9 +8,12 @@ To login as root user we must run su command
 
 [vedant@localhost ~]$ su
 Password: 
+
+2.useradd  -->To add a new user
+
 [root@localhost vedant]# useradd omkar
 
-2.id -->To check the user is created or not
+3.id -->To check the user is created or not
 
 
 [root@localhost vedant]# id omkar
@@ -21,7 +24,7 @@ The default home directory of all the newly created user is /home directory
 [root@localhost vedant]# ls /home
 king  mia  omakar  pratik  rahul  srk  user  veda  vedant  vedantyeotikar
 
-3.usermod -->Used to modify the user 
+4.usermod -->Used to modify the user 
 
 Options used to modify user :
 
@@ -97,13 +100,13 @@ TMV:x:1010:som,mia
 pratik:x:2322:
 omkar:x:2323:
 
-4.su <username> -->To login as user
+5.su <username> -->To login as user
 
 [root@localhost vedant]# su vedant
 [vedant@localhost ~]$
 
 
-5.userdel -->Used to delete user
+6.userdel -->Used to delete user
 
 
 [root@localhost vedant]# su
@@ -118,7 +121,7 @@ king  mia  omakar  pratik  rahul  srk  user  veda  vedant  vedantyeotikar
 king mia  pratik  rahul  srk  user  veda  vedant  vedantyeotikar
 
 
-5.groupadd -->Used to create a new group
+7.groupadd -->Used to create a new group
 
 
 [root@localhost vedant]# groupadd group1
@@ -140,7 +143,7 @@ omkar:x:2323:
 group1:x:2324:
 
 
-6.groupdel  -->Used to remove a group
+8.groupdel  -->Used to remove a group
 
 [root@localhost vedant]# groupdel group1
 
