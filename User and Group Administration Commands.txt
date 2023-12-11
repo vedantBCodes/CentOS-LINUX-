@@ -66,6 +66,11 @@ IX.-U -->To unlock the user
 
 [root@localhost vedant]# usermod -U omkar
 
+
+NOTE: one can also add there options while creating a user
+
+[root@localhost vedant]# useradd -u 1234 -p 4321 -c "hello" -m -d /home/rk ranbir
+
 All the users along with the extra information are stored in /etc/passwd directory
 
 [root@localhost vedant]# cat /etc/passwd
