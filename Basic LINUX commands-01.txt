@@ -1,0 +1,90 @@
+Basic LINUX commands
+
+1.pwd -->Prints working directory.
+
+[vedant@localhost ~]$ pwd
+/home/vedant
+
+2.ls -->Displays all the files and folders in a current directory .
+
+[vedant@localhost ~]$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates
+
+3.cd -->cd stands for change directory . It is used to go to a particular directory.
+
+[vedant@localhost ~]$ cd Downloads
+[vedant@localhost Downloads]$pwd
+/home/vedant/Downloads
+
+4.touch -->Create a new empty file.
+
+I . Creating an empty file.
+
+[vedant@localhost Downloads]$ touch file1
+[vedant@localhost Downloads]$ ls
+file1
+
+II . Creating 3 empty files at once.
+
+[vedant@localhost Downloads]$ touch file2 file3 file4
+[vedant@localhost Downloads]$ ls
+file1  file2  file3  file4
+
+III . Creating 5 empty files using {} .
+
+[vedant@localhost Downloads]$ touch file{5..9}
+[vedant@localhost Downloads]$ ls
+file1  file2  file3  file4  file5  file6  file7  file8  file9
+
+5.cat -->Used to display the content of a file.
+
+[vedant@localhost Downloads]$ cat file1   (As the file is empty it will not display anything)
+
+6.vi -->Used to edit a file .It will open another console where one can edit a file.
+
+[vedant@localhost Downloads]$ vi file1
+[vedant@localhost Downloads]$ cat file1
+Hii its file1 !
+How are you !
+I am good .
+Hope you are doing well !
+
+7.cat > file_name -->Used to override the previous content of a file.
+
+[vedant@localhost Downloads]$ cat > file1
+How are your kids
+
+[vedant@localhost Downloads]$ cat file1
+How are your kids
+
+8.cat >> file_name -->Used to append the previous content of a file.
+
+[vedant@localhost Downloads]$ cat >> file1
+How are you
+I am good
+
+[vedant@localhost Downloads]$ cat file1
+How are your kids
+How are you
+I am good
+
+9.cd .. --> used to go back to the parent folder.
+
+[vedant@localhost Downloads]$ pwd
+/home/vedant/Downloads
+
+[vedant@localhost Downloads]$ cd ..
+
+[vedant@localhost ~]$ pwd
+/home/vedant
+
+10.rm -->Used to remove a file
+
+[vedant@localhost ~]$ cd Downloads
+[vedant@localhost Downloads]$ ls
+file1  file2  file3  file4  file5  file6  file7  file8  file9
+
+[vedant@localhost Downloads]$ rm file9
+[vedant@localhost Downloads]$ ls
+file1  file2  file3  file4  file5  file6  file7  file8
+
