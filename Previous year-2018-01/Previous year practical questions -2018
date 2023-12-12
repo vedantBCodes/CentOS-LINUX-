@@ -1,0 +1,86 @@
+Previous Year 2018 Practical questions
+
+
+1.--->?
+
+[root@localhost ~]# touch file1 file2 file3
+[root@localhost ~]# ls
+Desktop    Downloads  file2  Music     Public     Videos
+Documents  file1      file3  Pictures  Templates
+[root@localhost ~]# ls -l file1 file2 file3
+-rw-r--r--. 1 root root 0 Dec  9 23:17 file1
+-rw-r--r--. 1 root root 0 Dec  9 23:17 file2
+-rw-r--r--. 1 root root 0 Dec  9 23:17 file3
+[root@localhost ~]# chmod u-w file1 file2 file3
+[root@localhost ~]# ls -l file1 file2 file3
+-r--r--r--. 1 root root 0 Dec  9 23:17 file1
+-r--r--r--. 1 root root 0 Dec  9 23:17 file2
+-r--r--r--. 1 root root 0 Dec  9 23:17 file3
+[root@localhost ~]# mkdir folder1
+[root@localhost ~]# ls
+Desktop    Downloads  file2  folder1  Pictures  Templates
+Documents  file1      file3  Music    Public    Videos
+[root@localhost ~]# 
+[root@localhost ~]# groupadd apache
+[root@localhost ~]# ls -ld folder1
+drwxr-xr-x. 2 root root 6 Dec  9 23:19 folder1
+[root@localhost ~]# chgrp -c apache folder1
+changed group of 'folder1' from root to apache
+[root@localhost ~]# ls -ld folder1
+drwxr-xr-x. 2 root apache 6 Dec  9 23:19 folder1
+
+
+2.--->?
+
+[root@localhost ~]# tar cvf boot.tar.bz2 /boot
+[root@localhost ~]# ls
+boot.tar.bz2  Documents  file1  file3    Music     Public     Videos
+Desktop   Downloads  file2  folder1  Pictures  Templates 
+
+
+4.--->?
+
+[root@localhost ~]# useradd -u 5000 -c "Student" -m -d /data/Raj -p 1212  Raj 
+[root@localhost ~]# tail -1 /etc/passwd
+Raj:x:5000:5000:Student:/data/Raj:/bin/bash
+
+5.--->?
+
+[root@localhost ~]# useradd -p 2323 user1
+[root@localhost ~]# groupadd group1
+[root@localhost ~]# usermod -G group1 user1
+[root@localhost ~]# tail -1 /etc/group
+group1:x:5002:user1
+
+6.--->?
+
+[root@localhost ~]# mkdir data1
+[root@localhost ~]# cd data1
+[root@localhost data1]# touch file1 file2 file3
+[root@localhost data1]# ls -l
+total 0
+-rw-r--r--. 1 root root 0 Dec  9 23:43 file1
+-rw-r--r--. 1 root root 0 Dec  9 23:43 file2
+-rw-r--r--. 1 root root 0 Dec  9 23:43 file3
+[root@localhost data1]# chmod g+w file1 file2 file3
+[root@localhost data1]# ls -l
+total 0
+-rw-rw-r--. 1 root root 0 Dec  9 23:43 file1
+-rw-rw-r--. 1 root root 0 Dec  9 23:43 file2
+-rw-rw-r--. 1 root root 0 Dec  9 23:43 file3
+[root@localhost data1]# 
+
+
+8.--->?
+
+[root@localhost ~]# mkdir data1 data2
+[root@localhost ~]# ls -ld data1 data2
+drwxr-xr-x. 2 root root 6 Dec  9 23:47 data1
+drwxr-xr-x. 2 root root 6 Dec  9 23:47 data2
+[root@localhost ~]# useradd apache
+[root@localhost ~]# chown -c apache data1 data2
+changed ownership of 'data1' from root to apache
+changed ownership of 'data2' from root to apache
+[root@localhost ~]# ls -ld data1 data2
+drwxr-xr-x. 2 apache root 6 Dec  9 23:47 data1
+drwxr-xr-x. 2 apache root 6 Dec  9 23:47 data2
