@@ -1,0 +1,41 @@
+#User and group ownership
+
+
+
+[root@localhost Documents]# ls
+file1  folderx  veda
+[root@localhost Documents]# ls -l
+total 4
+-rw-r--r--. 1 vedant vedant 40 Dec  9 13:23 file1
+drwxr-xr-x. 3 vedant vedant 21 Dec  9 17:22 folderx
+-rw-r--r--. 1 vedant vedant  0 Dec  9 13:55 veda
+
+-->Here the user owner and group owner of all the files and folders is vedant
+-->Using chown command root user can change the user ownership of file So that the particular user can access the file
+-->Using chgrp command root user can change the group ownership of file
+
+
+1.chown -->Used to change user ownership
+
+
+[root@localhost Documents]# chown -c ranbir file1
+changed ownership of 'file1' from vedant to ranbir
+
+[root@localhost Documents]# ls -l
+total 4
+-rw-r--r--. 1 ranbir vedant 40 Dec  9 13:23 file1
+drwxr-xr-x. 3 vedant vedant 21 Dec  9 17:22 folderx
+-rw-r--r--. 1 vedant vedant  0 Dec  9 13:55 veda
+
+2.chgrp -->Used to change group ownership (Group must be existed)
+
+
+[root@localhost Documents]# chgrp -c sgroup file1
+changed group of 'file1' from vedant to sgroup
+
+[root@localhost Documents]# ls -l
+total 4
+-rw-r--r--. 1 ranbir sgroup 40 Dec  9 13:23 file1
+drwxr-xr-x. 3 vedant vedant 21 Dec  9 17:22 folderx
+-rw-r--r--. 1 vedant vedant  0 Dec  9 13:55 veda
+
