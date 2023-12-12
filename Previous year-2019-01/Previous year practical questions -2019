@@ -1,0 +1,123 @@
+Previous Year 2019 Practical questions
+
+1--->?
+
+[root@localhost ~]# useradd -u 6000 -c "TMVuser" -p 1221 -G apache Vedant 
+
+
+2--->?
+
+[root@localhost ~]# ln -s /etc/passwd Spassword
+[root@localhost ~]# ln /etc/passwd Hpassword
+[root@localhost ~]# ls
+data1  Desktop    Downloads  Music     Public     Templates
+data2  Documents  Hpassword  Pictures  Spassword  Videos
+[root@localhost ~]# ls -i Hpassword Spassword /etc/passwd
+102986083 /etc/passwd  102986083 Hpassword   68371392 Spassword
+[root@localhost ~]# du /etc/passwd
+4	/etc/passwd
+[root@localhost ~]# du Hpassword Spassword 
+4	Hpassword
+0	Spassword
+[root@localhost ~]# 
+
+
+3--->
+
+[root@localhost ~]# ifconfig
+enp0s5: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 111.222.12.23  netmask 255.0.0.0  broadcast 111.255.255.255
+        inet6 fe80::21c:42ff:febd:1e08  prefixlen 64  scopeid 0x20<link>
+        inet6 fdb2:2c26:f4e4:0:21c:42ff:febd:1e08  prefixlen 64  scopeid 0x0<global>
+        ether 00:1c:42:bd:1e:08  txqueuelen 1000  (Ethernet)
+        RX packets 182494  bytes 221143524 (210.8 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 61475  bytes 6396344 (6.1 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 111.222.12.23  netmask 255.255.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 879  bytes 99341 (97.0 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 879  bytes 99341 (97.0 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+[root@localhost ~]# ifconfig lo 150.100.10.100 netmask 255.0.0.0
+[root@localhost ~]# ifconfig
+enp0s5: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 111.222.12.23  netmask 255.0.0.0  broadcast 111.255.255.255
+        inet6 fe80::21c:42ff:febd:1e08  prefixlen 64  scopeid 0x20<link>
+        inet6 fdb2:2c26:f4e4:0:21c:42ff:febd:1e08  prefixlen 64  scopeid 0x0<global>
+        ether 00:1c:42:bd:1e:08  txqueuelen 1000  (Ethernet)
+        RX packets 182552  bytes 221152450 (210.9 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 61535  bytes 6401948 (6.1 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 150.100.10.100  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 890  bytes 101217 (98.8 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 890  bytes 101217 (98.8 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+4--->
+
+[root@localhost ~]# mkdir -p data1/data2/data3
+[root@localhost ~]# ls
+data1  Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+[root@localhost ~]# chgrp -c apache data1
+changed group of 'data1' from root to apache
+[root@localhost ~]# ls -ld data1
+drwxr-xr-x. 3 apache apache 19 Dec 10 00:55 data1
+
+
+6--->
+
+root@localhost ~]# useradd -p 1221 Vedant 
+root@localhost ~]# groupadd TMVSTUDENT
+root@localhost ~]# usermod -G TMVSTUDENT Vedant
+
+7--->
+
+[root@localhost ~]# touch file1 file2 file3
+[root@localhost ~]# mkdir folder1 folder2 folder3
+[root@localhost ~]# mv file1 folder1
+[root@localhost ~]# mv file2 folder2
+[root@localhost ~]# mv file3 folder3
+[root@localhost ~]# ls
+data1    Documents  folder1  folder3  Pictures  Templates
+Desktop  Downloads  folder2  Music    Public    Videos
+[root@localhost ~]# ls folder1 folder2 folder3
+folder1:
+file1
+
+folder2:
+file2
+
+folder3:
+file3
+
+8--->
+
+[root@localhost ~]# tar cvf etc.tar.bz2 /etc
+[root@localhost ~]# du -h /etc
+[root@localhost ~]# du -h etc.tar.bz2
+
+10--->
+
+root@localhost ~]# useradd -p 1221 bcauser1 
+root@localhost ~]# useradd -p 3243 mcauser1
+root@localhost ~]# groupadd BCAusers
+root@localhost ~]# groupadd MCAusers
+root@localhost ~]# usermod -G BCAusers bcauser1 
+root@localhost ~]# usermod -G MCAusers mcauser1 
+root@localhost ~]# tail -2 /etc/group
+BCAusers:x:5001:bcauser1
+MCAusers:x:5002:mcauser1
+
