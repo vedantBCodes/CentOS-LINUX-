@@ -1,0 +1,12 @@
+#Scheduling a job to take the backup of /home directory into homebackup.tar file on every saturday on 2:30 PM
+
+
+[root@Linux1 ~]# crontab -e
+no crontab for root - using an empty one
+crontab: installing new crontab
+[root@Linux1 ~]# crontab -l
+
+30 14 * * sat tar evf homebackup.tar /home
+
+[root@Linux1 ~]# 
+
