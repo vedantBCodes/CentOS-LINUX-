@@ -1,0 +1,26 @@
+#Sticky bit permissions
+
+
+-->Normally users with write permission can delete a file in that perticular directory regardless of file's permission or the ownership .
+
+--->With the sticky bit permission set on a perticular directory only the owner of file can delete the file
+
+
+-->Creating a folder
+
+
+[root@Linux1 ~]# mkdir folderx
+
+[root@Linux1 ~]# ls -ld folderx
+drwxr-xr-x. 2 root root 6 Dec 13 02:44 folderx
+
+
+-->Setting sticky bit set permission
+
+
+[root@Linux1 ~]# chmod o+t folderx
+
+[root@Linux1 ~]# ls -ld folderx
+drwxr-xr-t. 2 root root 6 Dec 13 02:44 folderx
+[root@Linux1 ~]# 
+
