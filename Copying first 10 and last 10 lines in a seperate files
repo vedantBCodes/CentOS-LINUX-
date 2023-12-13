@@ -1,0 +1,44 @@
+#Copying first 10 lines from /etc/passwd file into first10.txt file and last10.txt lines into last10 file
+
+
+[root@localhost ~]# head -10 /etc/passwd > first10.txt
+[root@localhost ~]# tail -10 /etc/passwd > last10.txt
+
+
+[root@localhost ~]# cat first10.txt
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+
+
+[root@localhost ~]# cat last10.txt
+rahul:x:1005:1002::/home/rahul:/bin/bash
+som:x:1007:1008::/home/som:/bin/bash
+mia:x:2321:1003:hii mia:/etc/pass:/bin/bash
+pratik:x:2322:2322::/home/pratik:/bin/bash/nologin
+ranbir:x:4567:4567:hello:/home/rk:/bin/bash
+Raj:x:5000:5000:Student:/data/Raj:/bin/bash
+user1:x:5001:5001::/home/user1:/bin/bash
+apache:x:5002:4568::/home/apache:/bin/bash
+pavan3:x:5003:5003::/home/pavan3:/bin/bash
+pavan4:x:5004:5004::/home/pavan4:/bin/bash
+
+
+#Displaying inode numbers of files and directories 
+
+
+[root@localhost ~]# ls -i /etc/passwd
+102935056 /etc/passwd
+
+[root@localhost ~]# ls -i first10.txt
+68371450 first10
+
+[root@localhost ~]# ls -i last10.txt
+68371451 last10
