@@ -1,0 +1,65 @@
+#Job Scheduling using crontab and at commands
+
+#at --->For Single job Scheduling
+#Crontab -->For Multiple job Scheduling
+
+#at
+
+1.at -->To schedule a job
+
+[root@Linux1 ~]#at 10:15 AM
+
+at> echo "Hello world" > file1.txt
+  press control + d 
+  
+-->Here a job is scheduled at 10:15 AM today .
+-->The job is to create a file file1.txt in the current directory
+--->and add the text "Hello world" to it
+
+
+2.atq  -->To display all the scheduled jobs
+
+[root@Linux1 ~]#atq   
+
+2 Fri Dec 13 10:15:00 2023
+
+
+3.atrm  -->To remove the specific job by giving its job number .
+
+[root@Linux1 ~]#atrm 2  (IT will remove a scheduled job with job number 2)
+
+
+
+#Crontab
+
+1.crontab -e -->For adding or editing a cron job
+
+[vedant@Linux1 ~]$ crontab -e
+
+-->Here the vi editor will open where one can schedule any job as many times as he wants
+
+--->1st press the i key to write or edit into vi editor
+--->Then schedule a job  ( * * * * * echo "Hello" >> file1.txt )
+--->Then press esc key to escape from it
+--->Then press color and wq (for write and quite) eg. :wq
+--->Then press enter
+crontab: installing new crontab
+
+
+2.crontab -l -->For displaying all the scheduled jobs
+
+[vedant@Linux1 ~]$ crontab -l
+
+* * * * * echo "Hello" >> file1.txt
+
+-->This scheduled job will run every minute .
+-->And the job is to add a text "Hello" to file1.txt
+
+
+3.crontab -r -->For deleting all the scheduled jobs at once
+
+[vedant@Linux1 ~]$ crontab -r
+
+[vedant@Linux1 ~]$ crontab -l
+no crontab for vedant
+
