@@ -71,6 +71,18 @@ total 0
 [root@localhost data1]# 
 
 
+7.--->?
+
+[root@Linux1 ~]# crontab -l
+
+[root@Linux1 ~]# crontab -e
+crontab: installing new crontab
+[root@Linux1 ~]# crontab -l
+
+
+30 9 * * * echo "Good Morning"
+
+
 8.--->?
 
 [root@localhost ~]# mkdir data1 data2
