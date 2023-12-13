@@ -1,0 +1,41 @@
+#Displaying and changing hostname
+
+
+1.hostnamectl -->For displaying hostname
+
+[vedant@localhost root]$ hostnamectl
+   Static hostname: (unset)                         
+Transient hostname: localhost
+         Icon name: computer-vm
+           Chassis: vm 🖴
+        Machine ID: 272dde6e699447f8af48af2cf48c674b
+           Boot ID: 637bea581f604cb28ac0d0cafd3bbb5a
+    Virtualization: parallels
+  Operating System: CentOS Stream 9                 
+       CPE OS Name: cpe:/o:centos:centos:9
+            Kernel: Linux 5.14.0-390.el9.aarch64
+      Architecture: arm64
+   Hardware Vendor: Parallels International GmbH.
+    Hardware Model: Parallels ARM Virtual Machine
+  Firmware Version: 19.1.1 (54734)
+
+2.hostnamectl set-hostname --->To set the hostname
+
+[vedant@localhost root]$ hostnamectl set-hostname Linux1.cracker.org
+
+[vedant@localhost root]$ hostnamectl
+ Static hostname: Linux1.cracker.org
+       Icon name: computer-vm
+         Chassis: vm 🖴
+      Machine ID: 272dde6e699447f8af48af2cf48c674b
+         Boot ID: 637bea581f604cb28ac0d0cafd3bbb5a
+  Virtualization: parallels
+Operating System: CentOS Stream 9                 
+     CPE OS Name: cpe:/o:centos:centos:9
+          Kernel: Linux 5.14.0-390.el9.aarch64
+    Architecture: arm64
+ Hardware Vendor: Parallels International GmbH.
+  Hardware Model: Parallels ARM Virtual Machine
+Firmware Version: 19.1.1 (54734)
+[vedant@localhost root]$ 
+
