@@ -1,0 +1,51 @@
+#Searching for a word in a file
+
+
+
+[root@Linux1 ~]# cat file.txt
+Hii its file.txt
+how are you
+I am good 
+hope you are doing well
+
+-->Using less command one can search a word in a file
+
+[root@Linux1 ~]# less file.txt
+
+
+Hii its file.txt
+how are you
+I am good 
+hope you are doing well
+file.txt (END)
+
+-->Less command shows the content of the file in the vi editor
+-->One can search a word by pressing slash(/)
+
+Hii its file.txt
+how are you
+I am good 
+hope you are doing well
+/you
+
+-->Here we are searching for "you" word
+
+
+how are you
+I am good 
+hope you are doing well
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+(END)
+
+--->Here all the "you" words will be highlighted in the video editors.
+--->To exit from vi editor press :q and then press enter
+
