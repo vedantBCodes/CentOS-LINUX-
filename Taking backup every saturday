@@ -1,0 +1,19 @@
+#scheduling a job to take backup of /home directory every saturday
+
+
+
+[root@Linux1 ~]# cat > file1.sh
+tar cvf homebackup.tar /home
+
+-->created a .sh file which take backup of /home directory
+
+
+[root@Linux1 ~]# crontab -e
+crontab: installing new crontab
+[root@Linux1 ~]# crontab -l
+
+* * * * sat ./file1.sh
+
+--->Scheduled a job that will execute file1.sh file every Saturday which will eventually take backup of /home directory 
+ 
+
