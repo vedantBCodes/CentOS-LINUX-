@@ -1,0 +1,28 @@
+#Compairing the sizes of files and folders using du command
+
+[root@Linux1 ~]# ls
+Desktop    Downloads  file.txt  homebackup.tar  Pictures  Templates
+Documents  file1.sh   home      Music           Public    Videos
+
+
+[root@Linux1 ~]# du -sh Documents
+235M	Documents
+
+[root@Linux1 ~]# du -sh homebackup.tar 
+7.0M	homebackup.tar
+
+[root@Linux1 ~]# du file1.sh 
+4	file1.sh
+
+[root@Linux1 ~]# du -sh file1.sh file.txt
+4.0K	file1.sh
+0	file.txt
+
+[root@Linux1 ~]# du -sh file1.sh homebackup.tar
+4.0K	file1.sh
+7.0M	homebackup.tar
+
+[root@Linux1 ~]# du -sh Documents Downloads
+235M	Documents
+2.4M	Downloads
+
