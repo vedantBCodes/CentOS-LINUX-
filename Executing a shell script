@@ -1,0 +1,46 @@
+#Executing a shell script
+
+[root@Linux1 ~]# cat > file1.sh
+touch file.txt
+ls -l
+
+-->Here the file1.sh file will be created and added script that will create a file file.txt and display the files and directories in the current folder
+using ls -l
+
+
+[root@Linux1 ~]# ./file1.sh
+bash: ./file1.sh: Permission denied
+
+-->This error showed up because the user doesn't have access to execute (x) a file 
+
+
+[root@Linux1 ~]# ls -l file1.sh
+-rw-r--r--. 1 root root 61 Dec 13 10:09 file1.sh
+
+
+-->Using chmod one can add the execute permission to user 
+
+
+[root@Linux1 ~]# chmod -c u+x file1.sh
+mode of 'file1.sh' changed from 0644 (rw-r--r--) to 0744 (rwxr--r--)
+
+[root@Linux1 ~]# ls -l file1.sh 
+-rwxr--r--. 1 root root 61 Dec 13 10:09 file1.sh
+
+
+[root@Linux1 ~]# ./file1.sh
+
+-->This will execute the file1.sh
+
+drwxr-xr-x. 2 root root 4096 Dec 13 03:16 Desktop
+drwxr-xr-x. 3 root root   19 Dec 13 08:15 Documents
+drwxr-xr-x. 2 root root 4096 Dec 13 02:10 Downloads
+-rwxr--r--. 1 root root   61 Dec 13 10:09 file1.sh
+-rw-r--r--. 1 root root    0 Dec 13 10:10 file.txt
+drwxr-xr-x. 2 root root    6 Dec  7 22:37 Music
+drwxr-xr-x. 2 root root    6 Dec  7 22:37 Pictures
+drwxr-xr-x. 2 root root    6 Dec  7 22:37 Public
+drwxr-xr-x. 2 root root    6 Dec  7 22:37 Templates
+drwxr-xr-x. 2 root root    6 Dec  7 22:37 Videos
+[root@Linux1 ~]# 
+
