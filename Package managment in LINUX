@@ -1,0 +1,82 @@
+Package management in LINUX
+
+A package in Linux refers to a compressed file archive containing all the files that come with a particular application.
+
+It contains executable binary files, related configuration files, and information about the dependencies required to run it properly.
+
+Package management in Linux refers to the process of installing, updating, removing, and keeping track of software updates from specific repositories in the Linux system.
+
+A package manager in Linux is a tool that allows users to install, remove, upgrade, configure, and manage software packages on an operating system.
+
+YUM and RPM are two popular package management tools in a LINUX system .
+
+RPM (RedHat Package Management):
+
+-->It is a popular package management tool in RedHat enterprise.
+
+-->It is a free and open source package management system used for installing ,updating ,removing ,querying and
+Verifying packages in linux .
+
+Syntax of RPM commands
+
+1.Syntax to install
+
+#rpm -ivh <package_name>
+
+2.Syntax for upgrading
+
+#rpm -Uvh <package_name>
+
+3.Syntax for removing
+
+#rpm -e <package_name>
+
+4.Syntax for freshing
+
+#rpm -Fvh <package_name>
+
+RPM Queries 
+
+#rpm -qa -->lists all installed packages
+
+#rpm -q <package_name>  -->List the named package and version
+
+RPM Verification
+
+#rpm -V <package_name>
+
+
+
+YUM (Yellow dog Update Modified):
+
+YUM is a primary package management tool for installing removing and managing software packages in redhat enterprise.
+
+Syntax to install
+
+#yum install <package_name>
+
+Syntax to remove package
+
+#yum remove <package_name>
+
+Syntax to update package
+
+#yum update <package_name>
+
+Listing Packages 
+
+1.To list information about all installed and available packages, run the following command:
+
+#yum list all.
+
+2.To get information about specific packages, run the following command: 
+
+#yum list package_name.
+
+
+
+
+
+
+
+
